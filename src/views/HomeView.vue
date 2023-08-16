@@ -7,7 +7,7 @@ const userValue = ref([])
 const objVal = import.meta.env.VITE_APP_BASE_URL;
 
 const currentPage = ref(1);
-const itemsPerPage = 20; 
+const itemsPerPage = 50; 
 const totalItems = ref(0);
 const totalPages = ref(0);
 
@@ -32,7 +32,7 @@ const prevPage = () => {
 };
 
 const nextPage = () => {
-  if (currentPage.value < totalPages.value) {
+  if(currentPage.value < totalPages.value) {
     currentPage.value++;
     getData();
   }
@@ -42,6 +42,7 @@ const nextPage = () => {
 
 onMounted(() =>{
   getData();
+  console.log("window>>",window)
 })
 </script>
 
